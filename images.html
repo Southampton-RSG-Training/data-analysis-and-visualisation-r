@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: All Images</title>
+<title>Data Analysis and Visualisation in R: All Images</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -40,17 +40,8 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
-            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
-            </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
-          </abbr>
-        </span>
-
-      </div>
+        <img id="incubator-logo" alt="Lesson Description" src="assets/images/incubator-logo.svg">
+</div>
     </div>
     <div class="selector-container">
       <menu class="theme-selector" id="theme-selector-menu">
@@ -99,7 +90,7 @@
       <img class="small-logo" alt="Lesson Description" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Data Analysis and Visualisation in R
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +101,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Data Analysis and Visualisation in R
           </span>
         </li>
         <li class="nav-item">
@@ -237,7 +228,31 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="1-starting-with-data.html">1. Day 1: Starting with Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="2-wrangling-data.html">2. Day 2: Manipulating Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="3-visualising-data.html">3. Day 3: Visualising Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -300,12 +315,135 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>All Images</h1>
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="1-starting-with-data"><h2 class="section-heading"><a href="1-starting-with-data.html">Day 1: Starting with DataWorking Environment<a class="anchor" aria-label="anchor" href="#working-environment"></a>R Basics<a class="anchor" aria-label="anchor" href="#r-basics"></a>Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></a></h2>
 <hr class="half-width">
-<h3 id="introduction-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Blue Carpentries hex person logo with no text.’</p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><div class="figcaption">You belong in The Carpentries!</div>
-</figure><hr></section>
+<h3 id="1-starting-with-data-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘RStudio interface screenshot showing four panes.’</p>
+<figure><img src="fig/rstudio-screenshot.png" alt="RStudio interface screenshot showing four panes." class="figure mx-auto d-block"><div class="figcaption">RStudio interface screenshot. Clockwise from top
+left: Source, Environment/History, Files/Plots/Packages/Help/Viewer,
+Console.</div>
+</figure><hr>
+<h3 id="1-starting-with-data-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘RStudio preferences screenshot showing the workspace saving option set to Never.’</p>
+<figure><img src="fig/rstudio-preferences.png" alt="RStudio preferences screenshot showing the workspace saving option set to Never." class="figure mx-auto d-block"><div class="figcaption">Set ‘Save workspace to .RData on exit’ to
+‘Never’</div>
+</figure><hr>
+<h3 id="1-starting-with-data-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Screenshot of the expected working directory structure.’</p>
+<figure><img src="fig/r-starting-how-it-should-look-like.png" alt="Screenshot of the expected working directory structure." class="figure mx-auto d-block"></figure><hr>
+<h3 id="1-starting-with-data-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Diagram of the file structure to recreate.’</p>
+<figure><img src="fig/file_structure_diagram.png" alt="Diagram of the file structure to recreate." class="figure mx-auto d-block"></figure><hr>
+<h3 id="1-starting-with-data-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Screenshot of the RStudio help interface.’</p>
+<figure><img src="fig/rstudiohelp.png" alt="Screenshot of the RStudio help interface." class="figure mx-auto d-block"><div class="figcaption">RStudio help interface.</div>
+</figure><hr>
+<h3 id="1-starting-with-data-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Diagram showing a data frame with numeric, character, and logical vector columns.’</p>
+<figure><img src="fig/data-frame.svg" alt="Diagram showing a data frame with numeric, character, and logical vector columns." class="figure mx-auto d-block"></figure><hr>
+<h3 id="1-starting-with-data-figure-7">Figure 7</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Bar plot showing the number of females, males, and undetermined individuals captured.’</p>
+<figure><img src="fig/unnamed-chunk-9-1.png" alt="Bar plot showing the number of females, males, and undetermined individuals captured." class="figure mx-auto d-block"></figure><hr>
+<h3 id="1-starting-with-data-figure-8">Figure 8</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Bar plot showing female, male, and undetermined individuals in the specified order.’</p>
+<figure><img src="fig/unnamed-chunk-11-1.png" alt="Bar plot showing female, male, and undetermined individuals in the specified order." class="figure mx-auto d-block"></figure><hr></section><section id="2-wrangling-data"><h2 class="section-heading"><a href="2-wrangling-data.html">Day 2: Manipulating DataData Manipulation using <strong><code>dplyr</code></strong> and
+<strong><code>tidyr</code></strong>
+<a class="anchor" aria-label="anchor" href="#data-manipulation-using-dplyr-and-tidyr"></a>Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a></a></h2>
+<hr class="half-width">
+<h3 id="2-wrangling-data-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Diagram illustrating the pivot_wider transformation.’</p>
+<figure><img src="fig/pivot_wider.png" alt="Diagram illustrating the pivot_wider transformation." class="figure mx-auto d-block"></figure><hr>
+<h3 id="2-wrangling-data-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Diagram illustrating the pivot_longer transformation.’</p>
+<figure><img src="fig/pivot_longer.png" alt="Diagram illustrating the pivot_longer transformation." class="figure mx-auto d-block"></figure><hr></section><section id="3-visualising-data"><h2 class="section-heading"><a href="3-visualising-data.html">Day 3: Visualising Data</a></h2>
+<hr class="half-width">
+<h3 id="3-visualising-data-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A blank ggplot canvas with no axes or data plotted.’</p>
+<figure><img src="fig/blank-graph-1.png" alt="A blank ggplot canvas with no axes or data plotted." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘A ggplot canvas with weight on the x-axis and hindfoot_length on the y-axis but no data points.’</p>
+<figure><img src="fig/with-axis-1.png" alt="A ggplot canvas with weight on the x-axis and hindfoot_length on the y-axis but no data points." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight versus hindfoot length for all species in the surveys_complete dataset.’</p>
+<figure><img src="fig/first-ggplot-1.png" alt="Scatter plot of weight versus hindfoot length for all species in the surveys_complete dataset." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight versus hindfoot length generated by adding geom_point to a stored ggplot object.’</p>
+<figure><img src="fig/first-ggplot-with-plus-1.png" alt="Scatter plot of weight versus hindfoot length generated by adding geom_point to a stored ggplot object." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Basic scatter plot of weight versus hindfoot length.’</p>
+<figure><img src="fig/create-ggplot-object-1.png" alt="Basic scatter plot of weight versus hindfoot length." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight versus hindfoot length with transparent points to show overplotting.’</p>
+<figure><img src="fig/adding-transparency-1.png" alt="Scatter plot of weight versus hindfoot length with transparent points to show overplotting." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-7">Figure 7</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight versus hindfoot length with all points coloured blue.’</p>
+<figure><img src="fig/adding-colors-1.png" alt="Scatter plot of weight versus hindfoot length with all points coloured blue." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-8">Figure 8</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight versus hindfoot length with points coloured by species ID.’</p>
+<figure><img src="fig/color-by-species-1-1.png" alt="Scatter plot of weight versus hindfoot length with points coloured by species ID." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-9">Figure 9</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Scatter plot of weight by species ID with points coloured by plot type.’</p>
+<figure><img src="fig/unnamed-chunk-4-1.png" alt="Scatter plot of weight by species ID with points coloured by plot type." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-10">Figure 10</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Boxplot showing the distribution of weight for each species ID.’</p>
+<figure><img src="fig/boxplot-1.png" alt="Boxplot showing the distribution of weight for each species ID." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-11">Figure 11</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Boxplot with jittered data points overlaid in tomato red showing the distribution of weight by species ID.’</p>
+<figure><img src="fig/boxplot-with-points-1.png" alt="Boxplot with jittered data points overlaid in tomato red showing the distribution of weight by species ID." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-12">Figure 12</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Line plot of counts over years with all genera combined into a single line.’</p>
+<figure><img src="fig/first-time-series-1.png" alt="Line plot of counts over years with all genera combined into a single line." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-13">Figure 13</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Line plot of counts over years with a separate line for each genus.’</p>
+<figure><img src="fig/time-series-by-species-1.png" alt="Line plot of counts over years with a separate line for each genus." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-14">Figure 14</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Line plot of counts over years with each genus shown in a different colour.’</p>
+<figure><img src="fig/time-series-with-colors-1.png" alt="Line plot of counts over years with each genus shown in a different colour." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-15">Figure 15</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Line plot of counts over years by genus created by piping data into ggplot.’</p>
+<figure><img src="fig/integrating-the-pipe-1.png" alt="Line plot of counts over years by genus created by piping data into ggplot." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-16">Figure 16</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Line plot of counts over years by genus created by chaining data manipulation and ggplot with pipes.’</p>
+<figure><img src="fig/pipes-and-manipulation-1.png" alt="Line plot of counts over years by genus created by chaining data manipulation and ggplot with pipes." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-17">Figure 17</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots showing counts over years for each genus in a separate panel.’</p>
+<figure><img src="fig/first-facet-1.png" alt="Faceted line plots showing counts over years for each genus in a separate panel." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-18">Figure 18</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots showing counts over years by genus, with lines coloured by sex.’</p>
+<figure><img src="fig/facet-colour-1.png" alt="Faceted line plots showing counts over years by genus, with lines coloured by sex." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-19">Figure 19</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Grid of faceted line plots with sex in rows and genus in columns.’</p>
+<figure><img src="fig/facet-remove-grid-1.png" alt="Grid of faceted line plots with sex in rows and genus in columns." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-20">Figure 20</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots arranged in a single column with one panel per genus.’</p>
+<figure><img src="fig/facet-rows-1.png" alt="Faceted line plots arranged in a single column with one panel per genus." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-21">Figure 21</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots arranged in a single row with one panel per genus.’</p>
+<figure><img src="fig/facet-column-1.png" alt="Faceted line plots arranged in a single row with one panel per genus." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-22">Figure 22</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots by genus and sex using the black and white theme.’</p>
+<figure><img src="fig/facet-by-species-and-sex-white-bg-1.png" alt="Faceted line plots by genus and sex using the black and white theme." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-23">Figure 23</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots showing average weight over years for each species ID using the black and white theme.’</p>
+<figure><img src="fig/challange-theme-bw-1.png" alt="Faceted line plots showing average weight over years for each species ID using the black and white theme." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-24">Figure 24</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots by genus and sex with descriptive axis labels and a title.’</p>
+<figure><img src="fig/number-species-year-with-right-labels-1.png" alt="Faceted line plots by genus and sex with descriptive axis labels and a title." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-25">Figure 25</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots by genus and sex with increased font size on all text elements.’</p>
+<figure><img src="fig/number-species-year-with-right-labels-xfont-size-1.png" alt="Faceted line plots by genus and sex with increased font size on all text elements." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-26">Figure 26</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Faceted line plots by genus and sex with rotated x-axis labels for readability.’</p>
+<figure><img src="fig/number-species-year-with-theme-1.png" alt="Faceted line plots by genus and sex with rotated x-axis labels for readability." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-27">Figure 27</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Boxplot of hindfoot length by species ID with the custom grey theme applied.’</p>
+<figure><img src="fig/number-species-year-with-right-labels-xfont-orientation-1.png" alt="Boxplot of hindfoot length by species ID with the custom grey theme applied." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-28">Figure 28</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Two plots arranged side by side: a boxplot of species weights on the left and a line plot of genus abundance over time on the right.’</p>
+<figure><img src="fig/gridarrange-example-1.png" alt="Two plots arranged side by side: a boxplot of species weights on the left and a line plot of genus abundance over time on the right." class="figure mx-auto d-block"></figure><hr>
+<h3 id="3-visualising-data-figure-29">Figure 29</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Combined plot saved with ggsave showing the weight boxplot and abundance line plot side by side.’</p>
+<figure><img src="fig/ggsave-example-1.png" alt="Combined plot saved with ggsave showing the weight boxplot and abundance line plot side by side." class="figure mx-auto d-block"></figure><hr></section>
 </div>
     </main>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: Key Points</title>
+<title>Data Analysis and Visualisation in R: Key Points</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="../assets/styles.css">
 <script src="../assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -40,17 +40,8 @@
   <div class="container-fluid top-nav-container">
     <div class="col-md-8">
       <div class="large-logo">
-        <img id="incubator-logo" alt="Lesson Description" src="../assets/images/incubator-logo.svg"><span class="badge text-bg-danger">
-          <abbr title="This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.">
-            <a href="https://docs.carpentries.org/resources/curriculum/lesson-life-cycle.html" class="external-link alert-link">
-              <i aria-hidden="true" class="icon" data-feather="alert-octagon" style="border-radius: 5px"></i>
-              Pre-Alpha
-            </a>
-            <span class="visually-hidden">This lesson is in the pre-alpha phase, which means that it is in early development, but has not yet been taught.</span>
-          </abbr>
-        </span>
-
-      </div>
+        <img id="incubator-logo" alt="Lesson Description" src="../assets/images/incubator-logo.svg">
+</div>
     </div>
     <div class="selector-container">
       <menu class="theme-selector" id="theme-selector-menu">
@@ -99,7 +90,7 @@
       <img class="small-logo" alt="Lesson Description" src="../assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Data Analysis and Visualisation in R
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +101,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Data Analysis and Visualisation in R
           </span>
         </li>
         <li class="nav-item">
@@ -238,7 +229,31 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="1-starting-with-data.html">1. Day 1: Starting with Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="2-wrangling-data.html">2. Day 2: Manipulating Data</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="3-visualising-data.html">3. Day 3: Visualising Data</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -302,17 +317,87 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Key Points</h1>
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="1-starting-with-data"><h2 class="section-heading"><a href="1-starting-with-data.html">Day 1: Starting with DataWorking Environment<a class="anchor" aria-label="anchor" href="#working-environment"></a>R Basics<a class="anchor" aria-label="anchor" href="#r-basics"></a>Load Data<a class="anchor" aria-label="anchor" href="#load-data"></a></a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>Although R has a steeper learning curve than some other data
+analysis software, R has many advantages - R is interdisciplinary,
+extensible, great for data wrangling and reproducibility, and produces
+high quality graphics.</li>
+<li>Values can be assigned to objects, which have a number of
+attributes. Objects can then be used in arithmetic operations (and
+more).</li>
+<li>Functions automate sets of commands, many are predefined but it’s
+also possible to write your own. Functions usually take one or more
+inputs (called arguments) and often return a value.</li>
+<li>A vector is the most common and basic data structure in R. A vector
+is composed of a series of values, which can be either numbers or
+characters.</li>
+<li>Vectors can be subset by providing one or several indices in square
+brackets or by using a logical vector (often the output of a logical
+test).</li>
+<li>Missing data are represented in vectors as NA. You can add the
+argument <code>na.rm = TRUE</code> to calculate the result while
+ignoring the missing values.</li>
+<li>CSV files can be read in using <code>read.csv()</code>.</li>
+<li>Data frames are a data structure for most tabular data, and what we
+use for statistics and plotting.</li>
+<li>It is possible to subset dataframes by specifying the coordinates in
+square brackets. Row numbers come first, followed by column
+numbers.</li>
+<li>Factors represent categorical data. They are stored as integers
+associated with labels and they can be ordered or unordered. Factors can
+only contain a pre-defined set of values, known as levels.</li>
+</ul></section><section id="2-wrangling-data"><h2 class="section-heading"><a href="2-wrangling-data.html">Day 2: Manipulating DataData Manipulation using <strong><code>dplyr</code></strong> and
+<strong><code>tidyr</code></strong>
+<a class="anchor" aria-label="anchor" href="#data-manipulation-using-dplyr-and-tidyr"></a>Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a></a></h2>
+<hr class="half-width">
+<ul>
+<li>dplyr is a package for making tabular data manipulation easier and
+tidyr reshapes data so that it is in a convenient format for plotting or
+analysis. They are both part of the tidyverse package.</li>
+<li>A subset of columns from a dataframe can be selected using
+<code>select()</code>.</li>
+<li>To choose rows based on a specific criterion, use
+<code>filter()</code>.</li>
+<li>Pipes let you take the output of one function and send it directly
+to the next, which is useful when you need to do many things to the same
+dataset.</li>
+<li>To create new columns based on the values in existing columns, use
+<code>mutate()</code>.</li>
+<li>Many data analysis tasks can be approached using the
+split-apply-combine paradigm: split the data into groups, apply some
+analysis to each group, and then combine the results. This can be
+achieved using the <code>group_by()</code> and <code>summarize()</code>
+functions.</li>
+<li>Dates can be formatted using the package ‘lubridate’.</li>
+<li>To reshape data between wide and long formats, use
+<code>pivot_wider()</code> and <code>pivot_longer()</code> from the
+tidyr package.</li>
+<li>Export data from a dataframe to a csv file using
+<code>write_csv()</code>.</li>
+</ul></section><section id="3-visualising-data"><h2 class="section-heading"><a href="3-visualising-data.html">Day 3: Visualising Data</a></h2>
+<hr class="half-width">
+<ul>
+<li>ggplot2 is a plotting package that makes it simple to create complex
+plots from data in a data frame.</li>
+<li>Define an aesthetic mapping (using the <code>aes</code> function),
+by selecting the variables to be plotted and specifying how to present
+them in the graph.</li>
+<li>Add ‘geoms’ – graphical representations of the data in the plot
+using <code>geom_point()</code> for a scatter plot,
+<code>geom_boxplot()</code> for a boxplot, and <code>geom_line()</code>
+for a line plot.</li>
+<li>Faceting splits one plot into multiple plots based on a factor from
+the dataset.</li>
+<li>Every single component of a ggplot graph can be customized using the
+generic <code>theme()</code> function. However, there are pre-loaded
+themes available that change the overall appearance of the graph without
+much effort.</li>
+<li>The gridExtra package allows us to combine separate ggplots into a
+single figure using <code>grid.arrange()</code>.</li>
+<li>Use <code>ggsave()</code> to save a plot and edit the arguments
+(height, width, dpi) to change the dimension and resolution.</li>
 </ul></section>
 </div>
     </main>
