@@ -382,8 +382,8 @@ the script.</p>
 <code class="sourceCode R"><span><span class="co">## load the tidyverse packages, incl. dplyr</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="section level3">
-<h3 id="getting-started-with-tidyverse">Getting started with Tidyverse<a class="anchor" aria-label="anchor" href="#getting-started-with-tidyverse"></a></h3>
+<div class="section level2">
+<h2 id="getting-started-with-tidyverse">Getting started with Tidyverse<a class="anchor" aria-label="anchor" href="#getting-started-with-tidyverse"></a></h2>
 <p>We’ll read in our data using the <code>read_csv()</code> function,
 from the tidyverse package <strong><code>readr</code></strong>, instead
 of <code>read.csv()</code>.</p>
@@ -424,10 +424,9 @@ lesson. The data structure is very similar to a data frame. For our
 purposes the only difference is that, in addition to displaying the data
 type of each column under its name, it only prints the first few rows of
 data and only as many columns as fit on one screen.</p>
-</div>
-<div class="section level2">
-<h2 id="what-are-dplyr-and-tidyr">What are <strong><code>dplyr</code></strong> and
-<strong><code>tidyr</code></strong>?<a class="anchor" aria-label="anchor" href="#what-are-dplyr-and-tidyr"></a></h2>
+<div class="section level3">
+<h3 id="what-are-dplyr-and-tidyr">What are <strong><code>dplyr</code></strong> and
+<strong><code>tidyr</code></strong>?<a class="anchor" aria-label="anchor" href="#what-are-dplyr-and-tidyr"></a></h3>
 <p>The package <strong><code>dplyr</code></strong> provides easy tools
 for the most common data manipulation tasks, built to work directly with
 data frames.</p>
@@ -487,6 +486,7 @@ function.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="section level2">
 <h2 id="managing-data-with-dplyr">Managing Data with dplyr<a class="anchor" aria-label="anchor" href="#managing-data-with-dplyr"></a></h2>
 <p>We’re going to learn some of the most common
@@ -505,22 +505,7 @@ statistics on grouped data</li>
 <code>arrange()</code>: sort results</li>
 <li>
 <code>count()</code>: count discrete values</li>
-</ul><div id="challenge" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<span class="callout-header">Discussion</span>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
-<div class="callout-content">
-<p>Before we use the functions… Thinking about the survey dataset, or
-another dataset you are familiar with can you think of a use case for
-each of the functions based on their descriptions above? Discuss and
-share them within your group.</p>
-</div>
-</div>
-</div>
-</div>
+</ul></div>
 <div class="section level2">
 <h2 id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
 <p>To select columns of a data frame, use <code>select()</code>. The
@@ -630,12 +615,12 @@ data, we can assign it a new name:</p>
 </div>
 <p>Note that the final data frame is the leftmost part of this
 expression.</p>
-<div id="challenge-1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-1" class="callout-inner">
+<div id="challenge" class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Using pipes, subset the <code>surveys</code> data to include animals
@@ -706,8 +691,9 @@ possible and using pipes to remove the intermediary variables.</p>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="mutate">Mutate<a class="anchor" aria-label="anchor" href="#mutate"></a></h3>
+</div>
+<div class="section level2">
+<h2 id="mutate">Mutate<a class="anchor" aria-label="anchor" href="#mutate"></a></h2>
 <p>Frequently you’ll want to create new columns based on the values in
 existing columns, for example to do unit conversions, or to find the
 ratio of values in two columns. For this we’ll use
@@ -759,12 +745,12 @@ chain:</p>
 is an <code>NA</code>. The <code>!</code> symbol negates the result, so
 we’re asking for every row where weight <em>is not</em> an
 <code>NA</code>.</p>
-<div id="challenge-2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-2" class="callout-inner">
+<div id="challenge-1" class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <p>Create a new data frame from the <code>surveys</code> data that meets
@@ -808,11 +794,13 @@ to produce this data frame!</p>
 <div id="stretch-challenge-difficult---20-mins" class="callout-inner">
 <h3 class="callout-title">Stretch Challenge (Difficult - 20 mins)</h3>
 <div class="callout-content">
-<ul><li>Create a new dataframe fom the <code>surveys</code> data with a new
-column called <code>weight_simplified</code> which has the value
+<ol style="list-style-type: decimal"><li><p>Create a new dataframe fom the <code>surveys</code> data with a
+new column called <code>weight_simplified</code> which has the value
 <code>1</code> if weight is less than or equal to the mean weight and
-<code>2</code> if the weight is more than the mean weight.</li>
-</ul></div>
+<code>2</code> if the weight is more than the mean weight.</p></li>
+<li><p>What’s the name of the function in <code>dplyr</code> which both
+selects and mutates? Have a look at the <a href="https://dplyr.tidyverse.org/" class="external-link">documentation for dplyr</a></p></li>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
@@ -822,7 +810,8 @@ column called <code>weight_simplified</code> which has the value
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb20">
+<ol style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -830,49 +819,21 @@ column called <code>weight_simplified</code> which has the value
 <span>  <span class="fu">mutate</span><span class="op">(</span>weight_simplified <span class="op">=</span></span>
 <span>    <span class="fu">ifelse</span><span class="op">(</span><span class="va">weight</span> <span class="op">&lt;=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">weight</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
+<ol start="2" style="list-style-type: decimal"><li>transmute</li>
+</ol></div>
 </div>
 </div>
 </div>
 </div>
-<div id="stretch-challenge-difficult---20-mins" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="stretch-challenge-difficult---20-mins" class="callout-inner">
-<h3 class="callout-title">Stretch Challenge (Difficult - 20 mins)<em>
-(continued)</em>
-</h3>
-<div class="callout-content">
-<ul><li>What’s the name of the function in <code>dplyr</code> which both
-selects and mutates? Have a look at the <a href="https://dplyr.tidyverse.org/" class="external-link">documentation for dplyr</a>
-</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
-</button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
-<div class="accordion-body">
-<p>transmute</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="split-apply-combine-data-analysis-and-the-summarize-function">Split-apply-combine data analysis and the <code>summarize()</code>
-function<a class="anchor" aria-label="anchor" href="#split-apply-combine-data-analysis-and-the-summarize-function"></a></h3>
+<div class="section level2">
+<h2 id="split-apply-combine-data-analysis">Split-Apply-Combine Data Analysis<a class="anchor" aria-label="anchor" href="#split-apply-combine-data-analysis"></a></h2>
 <p>Many data analysis tasks can be approached using the
 <em>split-apply-combine</em> paradigm: split the data into groups, apply
 some analysis to each group, and then combine the results.
 <strong><code>dplyr</code></strong> makes this very easy through the use
 of the <code>group_by()</code> function.</p>
-<div class="section level4">
-<h4 id="the-summarize-function">The <code>summarize()</code> function<a class="anchor" aria-label="anchor" href="#the-summarize-function"></a></h4>
+<div class="section level3">
+<h3 id="the-group_by-andsummarize-functions">The <code>group_by</code> and<code>summarize()</code> Functions<a class="anchor" aria-label="anchor" href="#the-group_by-andsummarize-functions"></a></h3>
 <p><code>group_by()</code> is often used together with
 <code>summarize()</code>, which collapses each group into a single-row
 summary of that group. <code>group_by()</code> takes as arguments the
@@ -979,8 +940,9 @@ weight:</p>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">mean_weight</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-<div class="section level4">
-<h4 id="counting">Counting<a class="anchor" aria-label="anchor" href="#counting"></a></h4>
+</div>
+<div class="section level2">
+<h2 id="counting">Counting<a class="anchor" aria-label="anchor" href="#counting"></a></h2>
 <p>When working with data, we often want to know the number of
 observations found for each factor or combination of factors. For this
 task, <strong><code>dplyr</code></strong> provides <code>count()</code>.
@@ -1043,61 +1005,43 @@ in descending order of the count:</p>
 <p>From the table above, we may learn that, for instance, there are 75
 observations of the <em>albigula</em> species that are not specified for
 its sex (i.e. <code>NA</code>).</p>
-<div id="challenge-3" class="callout challenge">
+<div id="counting-grouping-and-summarising" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge</h3>
+<div id="counting-grouping-and-summarising" class="callout-inner">
+<h3 class="callout-title">Counting, Grouping and Summarising</h3>
 <div class="callout-content">
-<ul><li>How many animals were caught in each <code>plot_type</code>
-surveyed?</li>
-</ul></div>
+<ol style="list-style-type: decimal"><li><p>How many animals were caught in each <code>plot_type</code>
+surveyed?</p></li>
+<li><p>Use <code>group_by()</code> and <code>summarize()</code> to find
+the mean, min, and max hindfoot length for each species (using
+<code>species_id</code>). Also add the number of observations (hint: see
+<code>?n</code>).</p></li>
+<li><p>What was the heaviest animal measured in each year? Return the
+columns <code>year</code>, <code>genus</code>, <code>species_id</code>,
+and <code>weight</code>.</p></li>
+</ol></div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb33">
+<ol style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb33">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">surveys</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">count</span><span class="op">(</span><span class="va">plot_type</span><span class="op">)</span></span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-3" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<em> (continued)</em>
-</h3>
-<div class="callout-content">
-<ul><li>Use <code>group_by()</code> and <code>summarize()</code> to find the
-mean, min, and max hindfoot length for each species (using
-<code>species_id</code>). Also add the number of observations (hint: see
-<code>?n</code>).</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
-</button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb34">
+<ol start="2" style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1110,33 +1054,8 @@ mean, min, and max hindfoot length for each species (using
 <span>    max_hindfoot_length <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">hindfoot_length</span><span class="op">)</span>,</span>
 <span>    n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span> <span class="op">)</span></span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-3" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<em> (continued)</em>
-</h3>
-<div class="callout-content">
-<ul><li>What was the heaviest animal measured in each year? Return the
-columns <code>year</code>, <code>genus</code>, <code>species_id</code>,
-and <code>weight</code>.</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
-</button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb35">
+<ol start="3" style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb35">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
@@ -1146,8 +1065,6 @@ and <code>weight</code>.</li>
 <span>  <span class="fu">filter</span><span class="op">(</span><span class="va">weight</span> <span class="op">==</span> <span class="fu">max</span><span class="op">(</span><span class="va">weight</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">year</span>, <span class="va">genus</span>, <span class="va">species</span>, <span class="va">weight</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="va">year</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1350,15 +1267,6 @@ to unpick where errors have occured.</p>
 </div>
 <div class="section level2">
 <h2 id="reshaping-with-pivot_wider-and-pivot_longer">Reshaping with pivot_wider and pivot_longer<a class="anchor" aria-label="anchor" href="#reshaping-with-pivot_wider-and-pivot_longer"></a></h2>
-<p>In the <a href="https://southampton-rsg.github.io/spreadsheets-data-organisation-and-management/01-format-data/index.html" class="external-link">spreadsheet
-lesson</a>, we discussed how to structure our data leading to the four
-rules defining a tidy dataset:</p>
-<ol style="list-style-type: decimal"><li>Each variable has its own column</li>
-<li>Each observation has its own row</li>
-<li>Each value must have its own cell</li>
-<li>Each type of observational unit forms a table</li>
-</ol><p>Here we examine the fourth rule: Each type of observational unit
-forms a table.</p>
 <p>In <code>surveys</code>, the rows of <code>surveys</code> contain the
 values of variables associated with each record (the unit), values such
 as the weight or sex of each animal associated with each record. What if
@@ -1381,8 +1289,8 @@ values of a variable.</p>
 <p>We can do both these of transformations with two <code>tidyr</code>
 functions, <code>pivot_longer()</code> and
 <code>pivot_wider()</code>.</p>
-<div class="section level4">
-<h4 id="pivot_wider">Pivot_wider<a class="anchor" aria-label="anchor" href="#pivot_wider"></a></h4>
+<div class="section level3">
+<h3 id="pivot_wider">Pivot_wider<a class="anchor" aria-label="anchor" href="#pivot_wider"></a></h3>
 <p><code>pivot_wider()</code> takes three principal arguments:</p>
 <ol style="list-style-type: decimal"><li>the data</li>
 <li>
@@ -1436,8 +1344,8 @@ first.</p>
 <span>  <span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-<div class="section level4">
-<h4 id="pivot_longer">Pivot_longer<a class="anchor" aria-label="anchor" href="#pivot_longer"></a></h4>
+<div class="section level3">
+<h3 id="pivot_longer">Pivot_longer<a class="anchor" aria-label="anchor" href="#pivot_longer"></a></h3>
 <p>The opposing situation could occur if we had been provided with data
 in the form of <code>surveys_wide</code>, where the genus names are
 column names, but we wish to treat them as values of a genus variable
@@ -1488,71 +1396,50 @@ all out - just use the <code>:</code> operator!</p>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="va">Baiomys</span><span class="op">:</span><span class="va">Spermophilus</span>, names_to <span class="op">=</span> <span class="st">"genus"</span>, values_to <span class="op">=</span> <span class="st">"mean_weight"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">head</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
-<div id="challenge-4" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <span class="callout-header">Challenge</span>
-<div id="challenge-4" class="callout-inner">
+<div id="challenge-2" class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
-<ul><li>The <code>surveys</code> data set has two measurement columns:
+<p>The <code>surveys</code> data set has two measurement columns:
 <code>hindfoot_length</code> and <code>weight</code>. This makes it
 difficult to do things like look at the relationship between mean values
 of each measurement per year in different plot types. Let’s walk through
-a common solution for this type of problem. First, use
-<code>pivot_longer()</code> to create a dataset where we have a key
-column called <code>measurement</code> and a <code>value</code> column
-that takes on the value of either <code>hindfoot_length</code> or
+a common solution for this type of problem.</p>
+<ol style="list-style-type: decimal"><li><p>Use <code>pivot_longer()</code> to create a dataset where we have
+a key column called <code>measurement</code> and a <code>value</code>
+column that takes on the value of either <code>hindfoot_length</code> or
 <code>weight</code>. <em>Hint</em>: You’ll need to specify which columns
-are being pivoted.</li>
-</ul></div>
+are being pivoted.</p></li>
+<li><p>With this new data set, calculate the average of each
+<code>measurement</code> in each <code>year</code> for each different
+<code>plot_type</code>. Then <code>pivot_wider()</code> them into a data
+set with a column for <code>hindfoot_length</code> and
+<code>weight</code>. <em>Hint</em>: You only need to specify the name
+and value columns for <code>pivot_wider()</code>.</p></li>
+</ol></div>
 </div>
 </div>
-<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
-  <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb56">
+<ol style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">surveys_long</span> <span class="op">&lt;-</span> <span class="va">surveys</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">pivot_longer</span><span class="op">(</span>cols <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="va">hindfoot_length</span>, <span class="va">weight</span><span class="op">)</span>, names_to <span class="op">=</span><span class="st">'measurement'</span>, values_to <span class="op">=</span> <span class="st">'value'</span><span class="op">)</span></span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-4" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<span class="callout-header">Challenge</span>
-<div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge<em> (continued)</em>
-</h3>
-<div class="callout-content">
-<ul><li>With this new data set, calculate the average of each
-<code>measurement</code> in each <code>year</code> for each different
-<code>plot_type</code>. Then <code>pivot_wider()</code> them into a data
-set with a column for <code>hindfoot_length</code> and
-<code>weight</code>. <em>Hint</em>: You only need to specify the name
-and value columns for <code>pivot_wider()</code>.</li>
-</ul></div>
-</div>
-</div>
-<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
-  <h4 class="accordion-header" id="headingSolution10"> Show me the solution </h4>
-</button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb57">
+<ol start="2" style="list-style-type: decimal"><li>
+</li></ol><div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
