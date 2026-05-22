@@ -23,6 +23,8 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::::::::::::::::::::::::::::::::::::: callout
+
 ## If you didn't finish the previous day (or are having problems with the data) run this to create the needed environment.
 
 ```r
@@ -45,12 +47,13 @@ surveys_complete <- surveys_complete |>
   filter(species_id %in% species_counts$species_id)
 write_csv(surveys_complete, "data/surveys_complete.csv")
 ```
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 We start by loading the required packages. **`ggplot2`** is included in
 the **`tidyverse`** package.
 
 ```r
-library("tidyverse")
+library(tidyverse)
 ```
 
 If not still in the workspace, load the data we saved in the previous
@@ -170,11 +173,14 @@ surveys_plot
 Scatter plots can be useful exploratory tools for small datasets. For
 data sets with large numbers of observations, such as the
 `surveys_complete` data set, overplotting of points can be a
-limitation of scatter plots. One strategy for handling such settings
+limitation of scatter plots. 
+
+One strategy for handling such settings
 is to use hexagonal binning of observations. The plot space is
 tessellated into hexagons. Each hexagon is assigned a color based on
-the number of observations that fall within its boundaries. To use
-hexagonal binning with **`ggplot2`**, first install the R package
+the number of observations that fall within its boundaries. 
+
+To use hexagonal binning with **`ggplot2`**, first install the R package
 `hexbin` from CRAN:
 
 ```r
@@ -301,26 +307,26 @@ such that it's not hidden?
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenges
+## Boxplots
 
-Boxplots are useful summaries, but hide the *shape* of the
+1. Boxplots are useful summaries, but hide the *shape* of the
 distribution. For example, if there is a bimodal distribution, it
 would not be observed with a boxplot. An alternative to the boxplot is
 the violin plot (sometimes known as a beanplot), where the shape (of
 the density of points) is drawn.
 
-- Replace the box plot with a violin plot; see `geom_violin()`.
+Replace the box plot with a violin plot; see `geom_violin()`.
 
-In many types of data, it is important to consider the *scale* of the
+2. In many types of data, it is important to consider the *scale* of the
 observations. For example, it may be worth changing the scale of the
 axis to better distribute the observations in the space of the plot.
 Changing the scale of the axes is done similarly to adding/modifying
 other components (i.e., by incrementally adding commands). Try making
 these modifications:
 
-- Represent weight on the log~10~ scale; see `scale_y_log10()`.
+Represent weight on the log~10~ scale; see `scale_y_log10()`.
 
-So far, we've looked at the distribution of weight within species. Try
+3. So far, we've looked at the distribution of weight within species. Try
 making a new plot to explore the distribution of another variable
 within each species.
 
@@ -528,10 +534,12 @@ package provides a wide variety of options.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Plot Weight of Species Across the Years
 
 Use what you just learned to create a plot that depicts how the
 average weight of each species changes through the years.
+
+hint: You will need to use `group_by` and `summarize` first to get the plotting data
 
 :::::::::::::::::::::::: solution
 
