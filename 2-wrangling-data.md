@@ -61,7 +61,7 @@ Then, to load the package type:
 library(tidyverse)
 ```
 
-### Getting started with Tidyverse
+## Getting started with Tidyverse
 
 We'll read in our data using the `read_csv()` function, from the
 tidyverse package **`readr`**, instead of `read.csv()`.
@@ -98,7 +98,7 @@ difference is that, in addition to displaying the data type of each column under
 name, it only prints the first few rows of data and only as many
 columns as fit on one screen.
 
-## What are **`dplyr`** and **`tidyr`**?
+### What are **`dplyr`** and **`tidyr`**?
 
 The package **`dplyr`** provides easy tools for the most common data
 manipulation tasks, built to work directly with data frames.
@@ -160,16 +160,6 @@ We're going to learn some of the most common **`dplyr`** functions:
 - `arrange()`: sort results
 - `count()`: count discrete values
 
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Challenge
-
-Before we use the functions… Thinking about the survey dataset, or
-another dataset you are familiar with can you think of a use case for
-each of the functions based on their descriptions above? Discuss and
-share them within your group.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Selecting columns and filtering rows
 
@@ -315,7 +305,7 @@ surveys_final <- surveys |>
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Mutate
+## Mutate
 
 Frequently you'll want to create new columns based on the values in
 existing columns, for example to do unit conversions, or to find the
@@ -393,41 +383,38 @@ surveys_hindfoot_cm <- surveys |>
 
 ## Stretch Challenge (Difficult - 20 mins)
 
-- Create a new dataframe fom the `surveys` data with a new column
+1. Create a new dataframe fom the `surveys` data with a new column
   called `weight_simplified` which has the value `1` if weight is
   less than or equal to the mean weight and `2` if the weight is
   more than the mean weight.
+  
+2. What's the name of the function in `dplyr` which both selects and
+  mutates? Have a look at the [documentation for
+  dplyr](https://dplyr.tidyverse.org/)
 
 :::::::::::::::::::::::: solution
 
+1. 
 ```r
 surveys_simplified <- surveys |>
   mutate(weight_simplified =
     ifelse(weight <= mean(weight, na.rm = TRUE), 1, 2))
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- What's the name of the function in `dplyr` which both selects and
-  mutates? Have a look at the [documentation for
-  dplyr](https://dplyr.tidyverse.org/)
-
-:::::::::::::::::::::::: solution
-
-transmute
+2. transmute
 
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Split-apply-combine data analysis and the `summarize()` function
+## Split-Apply-Combine Data Analysis
 
 Many data analysis tasks can be approached using the
 *split-apply-combine* paradigm: split the data into groups, apply some
 analysis to each group, and then combine the results. **`dplyr`** makes
 this very easy through the use of the `group_by()` function.
 
-#### The `summarize()` function
+### The `group_by` and`summarize()` Functions
 
 `group_by()` is often used together with `summarize()`, which collapses
 each group into a single-row summary of that group. `group_by()` takes
@@ -523,7 +510,7 @@ surveys |>
   arrange(desc(mean_weight))
 ```
 
-#### Counting
+## Counting
 
 When working with data, we often want to know the number of observations
 found for each factor or combination of factors. For this task,
@@ -581,25 +568,26 @@ sex (i.e. `NA`).
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Counting, Grouping and Summarising
 
-- How many animals were caught in each `plot_type` surveyed?
+1. How many animals were caught in each `plot_type` surveyed?
+
+2. Use `group_by()` and `summarize()` to find the mean, min, and max
+  hindfoot length for each species (using `species_id`). Also add
+  the number of observations (hint: see `?n`).
+  
+3. What was the heaviest animal measured in each year? Return the
+  columns `year`, `genus`, `species_id`, and `weight`.
 
 :::::::::::::::::::::::: solution
 
+1. 
 ```r
 surveys |>
   count(plot_type)
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- Use `group_by()` and `summarize()` to find the mean, min, and max
-  hindfoot length for each species (using `species_id`). Also add
-  the number of observations (hint: see `?n`).
-
-:::::::::::::::::::::::: solution
-
+2. 
 ```r
 surveys |>
   filter(!is.na(hindfoot_length)) |>
@@ -611,13 +599,7 @@ surveys |>
     n = n() )
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- What was the heaviest animal measured in each year? Return the
-  columns `year`, `genus`, `species_id`, and `weight`.
-
-:::::::::::::::::::::::: solution
-
+3.
 ```r
 surveys |>
   filter(!is.na(weight)) |>
@@ -626,7 +608,6 @@ surveys |>
   select(year, genus, species, weight) |>
   arrange(year)
 ```
-
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -797,19 +778,6 @@ unpick where errors have occured.
 
 ## Reshaping with pivot_wider and pivot_longer
 
-In the [spreadsheet
-lesson](https://southampton-rsg.github.io/spreadsheets-data-organisation-and-management/01-format-data/index.html),
-we discussed how to structure our data leading to the four rules
-defining a tidy dataset:
-
-1. Each variable has its own column
-2. Each observation has its own row
-3. Each value must have its own cell
-4. Each type of observational unit forms a table
-
-Here we examine the fourth rule: Each type of observational unit forms a
-table.
-
 In `surveys`, the rows of `surveys` contain the values of variables
 associated with each record (the unit), values such as the weight or sex
 of each animal associated with each record. What if instead of comparing
@@ -835,7 +803,7 @@ values of a variable.
 We can do both these of transformations with two `tidyr` functions,
 `pivot_longer()` and `pivot_wider()`.
 
-#### Pivot_wider
+### Pivot_wider
 
 `pivot_wider()` takes three principal arguments:
 
@@ -885,7 +853,7 @@ surveys_gw |>
   head()
 ```
 
-#### Pivot_longer
+### Pivot_longer
 
 The opposing situation could occur if we had been provided with data in
 the form of `surveys_wide`, where the genus names are column names, but
@@ -937,26 +905,18 @@ surveys_wide |>
 
 ## Challenge
 
-- The `surveys` data set has two measurement columns:
-  `hindfoot_length` and `weight`. This makes it difficult to do
-  things like look at the relationship between mean values of each
-  measurement per year in different plot types. Let's walk through a
-  common solution for this type of problem. First, use
-  `pivot_longer()` to create a dataset where we have a key column
+The `surveys` data set has two measurement columns:
+`hindfoot_length` and `weight`. This makes it difficult to do
+things like look at the relationship between mean values of each
+measurement per year in different plot types. Let's walk through a
+common solution for this type of problem. 
+  
+1. Use `pivot_longer()` to create a dataset where we have a key column
   called `measurement` and a `value` column that takes on the value
   of either `hindfoot_length` or `weight`. *Hint*: You'll need to
   specify which columns are being pivoted.
-
-:::::::::::::::::::::::: solution
-
-```r
-surveys_long <- surveys |>
-  pivot_longer(cols = c(hindfoot_length, weight), names_to ='measurement', values_to = 'value')
-```
-
-:::::::::::::::::::::::::::::::::
-
-- With this new data set, calculate the average of each
+  
+2. With this new data set, calculate the average of each
   `measurement` in each `year` for each different `plot_type`. Then
   `pivot_wider()` them into a data set with a column for
   `hindfoot_length` and `weight`. *Hint*: You only need to specify
@@ -964,13 +924,18 @@ surveys_long <- surveys |>
 
 :::::::::::::::::::::::: solution
 
+1. 
+```r
+surveys_long <- surveys |>
+  pivot_longer(cols = c(hindfoot_length, weight), names_to ='measurement', values_to = 'value')
+```
+2.
 ```r
 surveys_long |>
   group_by(year, measurement, plot_type) |>
   summarize(mean_value = mean(value, na.rm=TRUE)) |>
   pivot_wider(names_from = measurement, values_from = mean_value)
 ```
-
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::

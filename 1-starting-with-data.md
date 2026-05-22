@@ -406,24 +406,17 @@ Using the information above about how and where to ask a question
 online, find out the r arithmetic operators for the following
 operations:
 
-Remainder from integer division (modulus) e.g. remainder of 8/3
+1. Remainder from integer division (modulus) e.g. remainder of 8/3
+2. Raise to the power of (exponentiation) e.g. 5 to the power of 2
 
 :::::::::::::::::::::::: solution
 
 ```r
 8 %% 3
 ```
-
-:::::::::::::::::::::::::::::::::
-
-Raise to the power of (exponentiation) e.g. 5 to the power of 2
-
-:::::::::::::::::::::::: solution
-
 ```r
 5 ^ 2
 ```
-
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -436,39 +429,7 @@ at some later time, i.e. a number, a sequence of numbers, or even
 collections of data, for now we will start with numbers and later move
 onto collections of numbers which in R are called *vectors*.
 
-An *object* is programming speak for a thing with known properties. Lets
-consider an example that we would all be familiar with before jumping
-into some R.
-
-I tell you that I have a *car*, in this case the car is the *object*.
-Without any further information you instinctively know that the *object*
-called *car* has several *attributes*. For example, *colour*, *make*,
-*model*, *numberplate*. You can use this predefined model to ask
-sensible questions. For example if you ask me, what model the car is (or
-model(*car*)) I can tell you 'Corsa'. However, if you were to ask me
-breed(*car*) this would be a nonsense question to which I would not be
-able to answer, where as breed(*pet*) then I could tell you 'sheepdog'.
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Challenge
-
-Write down three other attributes for the object pet?
-
-:::::::::::::::::::::::: solution
-
-Including but not limited to: Species, Age, Colour, Name, Sex,
-Owner…
-
-:::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-In this tutorial we will use the predefined R objects for vectors and
-numerical values. We will see that these are much simpler than the
-linguistic examples above, and we learn the sort of *attributes* we
-expect them to have and how to inspect an object to tell us its set of
-*attributes*.
+An *object* (or *variable*) is programming speak for a thing with known properties.  You can think of an object as a box with a label, holding the value inside.
 
 To create an object, we need to give it a name followed by the
 assignment operator `<-`, and the value we want to give it:
@@ -496,29 +457,28 @@ more advanced methods we will cover later on.
 
 Objects can be given any name such as `x`, `current_temperature`, or
 `subject_id`. You want your object names to be explicit and not too
-long. They cannot start with a number (`2x` is not valid, but `x2` is).
-R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`).
-There are some names that cannot be used because they are the names of
+long. 
+
+- They cannot start with a number (`2x` is not valid, but `x2` is).
+- R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`).
+- There are some names that cannot be used because they are the names of
 fundamental functions in R (e.g., `if`, `else`, `for`, see
 [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)
 for a complete list). In general, even if it's allowed, it's best to not
 use other function names (e.g., `c`, `T`, `mean`, `data`, `df`,
 `weights`). If in doubt, check the help to see if the name is already in
-use. It's also best to avoid dots (`.`) within names. Many function
+use. 
+- It's also best to avoid dots (`.`) within names. Many function
 names in R itself have them and dots also have a special meaning
 (methods) in R and other programming languages. To avoid confusion,
-don't include dots in names. It is also recommended to use nouns for
-object names, and verbs for function names. It's important to be
-consistent in the styling of your code (where you put spaces, how you
-name objects, etc.). Using a consistent coding style makes your code
-clearer to read for your future self and your collaborators. In R, three
+don't include dots in names. 
+
+It is also recommended to use nouns for object names, and verbs for function names. It's important to be consistent in the styling of your code (where you put spaces, how you name objects, etc.). Using a consistent coding style makes your code clearer to read for your future self and your collaborators. In R, three
 popular style guides are
-[Google's](https://google.github.io/styleguide/Rguide.xml), [Jean
-Fan's](https://jef.works/R-style-guide/) and the
-[tidyverse's](https://style.tidyverse.org/). The tidyverse's is very
-comprehensive and may seem overwhelming at first. You can install the
-[**`lintr`**](https://github.com/jimhester/lintr) package to
-automatically check for issues in the styling of your code.
+- [Google's](https://google.github.io/styleguide/Rguide.xml)
+- [Jean Fan's](https://jef.works/R-style-guide/)
+- [tidyverse's](https://style.tidyverse.org/). The tidyverse's is very
+comprehensive and may seem overwhelming at first. 
 
 ::::::::::::::::::::::::::::::::::::: callout
 
@@ -591,7 +551,7 @@ and that you can remember what each line does.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Objects and Values
 
 What are the values after each statement in the following?
 
@@ -602,7 +562,15 @@ mass <- mass * 2.0      # mass?
 age  <- age - 20        # age?
 mass_index <- mass/age  # mass_index?
 ```
+:::::::::::::::::::::::: solution
 
+mass <- 47.5            # mass = 47.5
+age  <- 122             # age = 122
+mass <- mass * 2.0      # mass = 95
+age  <- age - 20        # age = 102
+mass_index <- mass/age  # mass_index = 0.9313725
+
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Functions and their arguments
@@ -815,8 +783,7 @@ We can do this over and over again to grow a vector, or assemble a
 dataset. As we program, this may be useful to add results that we are
 collecting or calculating.
 
-An **atomic vector** is the simplest R **data type** and is a linear
-vector of a single type. The 6 **atomic vector** types are:
+A **vector** will have one of the following data types:
 
 - `"character"` for text
 - `"numeric"` or `"double"` for non-interger numbers
@@ -834,19 +801,11 @@ important ones are lists (`list`), matrices (`matrix`), data frames
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Data Types
 
-- We've seen that atomic vectors can be of type character, numeric
-  (or double), integer, and logical. But what happens if we try to
-  mix these types in a single vector?
+We’ve seen that atomic vectors can be of type character, numeric (or double), integer, and logical. But what happens if we try to mix these types in a single vector?
 
-:::::::::::::::::::::::: solution
-
-R implicitly converts them to all be the same type
-
-:::::::::::::::::::::::::::::::::
-
-- What will happen in each of these examples? (hint: use `class()`
+1. What will happen in each of these examples? (hint: use `class()`
   to check the data type of your objects):
 
 ```r
@@ -855,35 +814,14 @@ num_logical <- c(1, 2, 3, TRUE)
 char_logical <- c("a", "b", "c", TRUE)
 tricky <- c(1, 2, 3, "4")
 ```
-
-- Why do you think it happens?
-
-:::::::::::::::::::::::: solution
-
-Vectors can be of only one data type. R tries to convert (coerce)
-the content of this vector to find a "common denominator" that
-doesn't lose any information.
-
-:::::::::::::::::::::::::::::::::
-
-- How many values in `combined_logical` are `"TRUE"` (as a
+2. How many values in `combined_logical` are `"TRUE"` (as a
   character) in the following example (reusing the 2 `..._logical`s
   from above):
 
 ```r
 combined_logical <- c(num_logical, char_logical)
 ```
-
-:::::::::::::::::::::::: solution
-
-Only one. There is no memory of past data types, and the coercion
-happens the first time the vector is evaluated. Therefore, the
-`TRUE` in `num_logical` gets converted into a `1` before it gets
-converted into `"1"` in `combined_logical`.
-
-:::::::::::::::::::::::::::::::::
-
-- You've probably noticed that objects of different types get
+3. You've probably noticed that objects of different types get
   converted into a single, shared type within a vector. In R, we
   call converting objects from one class into another class
   *coercion*. These conversions happen according to a hierarchy,
@@ -893,7 +831,20 @@ converted into `"1"` in `combined_logical`.
 
 :::::::::::::::::::::::: solution
 
+1. 
+```r
+num_char <- c(1, 2, 3, "a") # character
+num_logical <- c(1, 2, 3, TRUE) #numeric
+char_logical <- c("a", "b", "c", TRUE) #character
+tricky <- c(1, 2, 3, "4") #character
+```
+2. Only one. There is no memory of past data types, and the coercion
+happens the first time the vector is evaluated. Therefore, the
+`TRUE` in `num_logical` gets converted into a `1` before it gets
+converted into `"1"` in `combined_logical`.
+
 logical → numeric → character ← logical
+
 
 :::::::::::::::::::::::::::::::::
 
@@ -908,25 +859,19 @@ create the following vectors:
 
 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
 
+3 6 9 12 15 18 21 24 27 30
+
+Note: there are several possible solutions
+
 :::::::::::::::::::::::: solution
 
 ```r
 rep(1:5, 3)
 ```
-
-:::::::::::::::::::::::::::::::::
-
-3 6 9 12 15 18 21 24 27 30
-
-:::::::::::::::::::::::: solution
-
 ```r
 seq(3, 30, 3)
 ```
-
 :::::::::::::::::::::::::::::::::
-
-Note: there are several possible solutions
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -1160,9 +1105,6 @@ length(heights_above_67)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Now that we have learned how to write scripts, and the basics of R's
-data structures, we are ready to start working with the Portal dataset
-we have been using in the other lessons, and learn about data frames.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -1174,6 +1116,9 @@ advanced methods of dealing with multivariate missing data.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+Now that we have learned how to write scripts, and the basics of R's
+data structures, we are ready to start working with the Portal dataset
+we have been using in the other lessons, and learn about data frames.
 ---
 
 # Load Data
@@ -1332,7 +1277,7 @@ of the data. Let's try them out!
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Inspecting Dataframes
 
 Based on the output of `str(surveys)`, can you answer the following
 questions?
@@ -1404,56 +1349,41 @@ correct names of the columns.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Subsetting Dataframes
 
-- Create a `data.frame` (`surveys_200`) containing only the data in
+1. Create a `data.frame` (`surveys_200`) containing only the data in
   row 200 of the `surveys` dataset.
+  
+2. Try running `n_rows <- nrow(surveys)`. Notice how `nrow()` gave you the number of rows in a `data.frame`? Create a new data frame (`surveys_last`) including only the last row.
+
+3. Use `nrow()` to extract the row that is in the middle of the data
+  frame. Store the content of this row in an object named `surveys_middle`.
+  
+4. Combine `nrow()` with the `-` notation above to reproduce the
+  behavior of `head(surveys)`, keeping just the first through 6th
+  rows of the surveys dataset.
+
 
 :::::::::::::::::::::::: solution
-
+1. 
 ```r
 surveys_200 <- surveys[200, ]
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- Try running `n_rows <- nrow(surveys)`. Notice how `nrow()` gave you the number of rows in a `data.frame`?
-
-  - Use that number to pull out just that last row in the data frame.
-  - Compare that with what you see as the last row using `tail()` to make sure it's meeting expectations.
-  - Pull out that last row using `nrow()` instead of the row number.
-  - Create a new data frame (`surveys_last`) from that last row.
-
-:::::::::::::::::::::::: solution
-
+2. 
 ```r
 surveys_last <- surveys[n_rows, ]
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- Use `nrow()` to extract the row that is in the middle of the data
-  frame. Store the content of this row in an object named
-  `surveys_middle`.
-
-:::::::::::::::::::::::: solution
-
+3. 
 ```r
 surveys_middle <- surveys[n_rows / 2, ]
 ```
 
-:::::::::::::::::::::::::::::::::
-
-- Combine `nrow()` with the `-` notation above to reproduce the
-  behavior of `head(surveys)`, keeping just the first through 6th
-  rows of the surveys dataset.
-
-:::::::::::::::::::::::: solution
-
+4.
 ```r
 surveys_head <- surveys[-(7:n_rows), ]
 ```
-
 :::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1478,9 +1408,7 @@ survey_dec_2000 <- surveys[surveys$month == 12 & surveys$year == 2000, c('record
 
 ## Factors
 
-Factors are very useful and actually contribute to making R particularly
-well suited to working with data. So we are going to spend a little time
-introducing them.
+Factors are very useful and actually contribute to making R particularly well suited to working with data. So we are going to spend a little time introducing them.
 
 Factors represent categorical data. They are stored as integers
 associated with labels and they can be ordered or unordered. While
@@ -1565,8 +1493,7 @@ Another method is to use the `levels()` function. Compare:
 ```r
 year_fct <- factor(c(1990, 1983, 1977, 1998, 1990))
 as.numeric(year_fct)               # Wrong! And there is no warning...
-as.numeric(as.character(year_fct)) # Works...
-as.numeric(levels(year_fct))[year_fct]    # The recommended way.
+as.numeric(levels(year_fct))[year_fct]  
 ```
 
 Notice that in the `levels()` approach, three important steps occur:
@@ -1636,10 +1563,10 @@ Levels: undetermined F M
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+## Factors
 
-- Rename "F" and "M" to "female" and "male" respectively.
-- Now that we have renamed the factor level to "undetermined", can
+1. Rename "F" and "M" to "female" and "male" respectively.
+2. Now that we have renamed the factor level to "undetermined", can
   you recreate the barplot such that "undetermined" is last (after
   "male")?
 
@@ -1697,8 +1624,7 @@ You have now completed all the day one learning objectives. It is very
 common to make mistakes in programming languages, identifying and
 solving `debugging` these mistakes makes up a large part of the
 programming skill-set. Becoming familiar with the basics we have covered
-today and the inspection tools e.g. `summary()`, `ls()`, `str()` will
-set you on a path to being a confident R programmer.
+today will set you on a path to being a confident R programmer.
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
@@ -1709,7 +1635,7 @@ set you on a path to being a confident R programmer.
 - Vectors can be subset by providing one or several indices in square brackets or by using a logical vector (often the output of a logical test).
 - Missing data are represented in vectors as NA. You can add the argument `na.rm = TRUE` to calculate the result while ignoring the missing values.
 - CSV files can be read in using `read.csv()`.
-- Data frames are a data structure for most tabular data, and what we use for statistics and plotting.
+- Data frames are a data structure for most tabular data, and what we use for statistics and plsotting.
 - It is possible to subset dataframes by specifying the coordinates in square brackets. Row numbers come first, followed by column numbers.
 - Factors represent categorical data. They are stored as integers associated with labels and they can be ordered or unordered. Factors can only contain a pre-defined set of values, known as levels.
 
