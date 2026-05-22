@@ -125,7 +125,7 @@ We will use RStudio IDE to write code, navigate the files on our
 computer, inspect the variables we are going to create, and visualize
 the plots we will generate.
 
-![RStudio interface screenshot. Clockwise from top left: Source, Environment/History, Files/Plots/Packages/Help/Viewer, Console.](fig/rstudio-screenshot.png){alt='RStudio interface screenshot showing four panes.'}
+![RStudio interface screenshot. Clockwise from top left: Source, Environment/History, Files/Plots/Packages/Help/Viewer, Console.](fig/rstudio-screenshot-2026.png){alt='RStudio interface screenshot showing four panes.'}
 
 RStudio is divided into 4 "Panes": the **Source** for your scripts and
 documents (top-left, in the default layout), your
@@ -166,7 +166,7 @@ memory you forgot you had. To turn that off, go to Tools --> 'Global
 Options' and select the 'Never' option for 'Save workspace to .RData' on
 exit.'
 
-![Set 'Save workspace to .RData on exit' to 'Never'](fig/rstudio-preferences.png){alt='RStudio preferences screenshot showing the workspace saving option set to Never.'}
+![Set 'Save workspace to .RData on exit' to 'Never'](fig/rstudio-preferences-2026.png){alt='RStudio preferences screenshot showing the workspace saving option set to Never.'}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -225,7 +225,7 @@ corner and select R Script, the hit save and name it
 
 Your working directory should now look like this:
 
-![](fig/r-starting-how-it-should-look-like.png){alt='Screenshot of the expected working directory structure.'}
+![](fig/rstudio-files-2026.png){alt='Screenshot of the expected working directory structure.'}
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -310,7 +310,7 @@ return you to the `>` prompt.
 
 ### Use the built-in RStudio help interface to search for more information on R functions
 
-![RStudio help interface.](fig/rstudiohelp.png){alt='Screenshot of the RStudio help interface.'}
+![RStudio help interface.](fig/rstudio-help-2026.png){alt='Screenshot of the RStudio help interface.'}
 
 One of the fastest ways to get help, is to use the RStudio help
 interface. This panel by default can be found at the lower right hand
