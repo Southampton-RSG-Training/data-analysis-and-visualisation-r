@@ -263,7 +263,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2023-03-16 |
+        <p>Last updated on 2026-07-28 |
 
         <a href="https://github.com/Southampton-RSG-Training/data-analysis-and-visualisation-r/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -276,13 +276,244 @@
         </div>
 
         
-<section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
-<hr class="half-width"><p>This is a placeholder file. Please add content here.</p>
-<!--
+
+<section><h2 class="section-heading" id="other-resources-and-further-learning">Other Resources and Further Learning<a class="anchor" aria-label="anchor" href="#other-resources-and-further-learning"></a></h2>
+<hr class="half-width"><ul><li><a href="https://r4ds.hadley.nz/" class="external-link">R for Data Science (2e) - free
+online book</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf" class="external-link">RStudio
+IDE cheatsheet</a></li>
+<li><a href="https://dplyr.tidyverse.org/" class="external-link">dplyr documentation and
+cheatsheet</a></li>
+<li><a href="https://tidyr.tidyverse.org/" class="external-link">tidyr documentation and
+cheatsheet</a></li>
+<li><a href="https://ggplot2.tidyverse.org/" class="external-link">ggplot2 documentation and
+cheatsheet</a></li>
+<li><a href="https://lubridate.tidyverse.org/" class="external-link">lubridate
+documentation</a></li>
+<li><a href="https://style.tidyverse.org/" class="external-link">tidyverse style
+guide</a></li>
+<li><a href="https://www.rdocumentation.org" class="external-link">R documentation
+search</a></li>
+<li><a href="https://stackoverflow.com/questions/tagged/r?tab=Votes" class="external-link">Stack
+Overflow <code>r</code> tag</a></li>
+<li><a href="https://community.rstudio.com/" class="external-link">RStudio Community
+forum</a></li>
+<li><a href="https://cran.r-project.org/web/views/" class="external-link">CRAN Task Views
+(browse packages by topic)</a></li>
+</ul></section><section><h2 class="section-heading" id="glossary">Glossary<a class="anchor" aria-label="anchor" href="#glossary"></a></h2>
+<hr class="half-width"><dl><dt><span id="argument">argument</span></dt>
+<dd>
+A value passed to a <a href="#function">function</a> when it is called,
+used to control what the function does. Some arguments are required;
+others have default values and are called <a href="#option">options</a>.
+</dd>
+<dt><span id="assignment-operator">assignment operator</span></dt>
+<dd>
+The <code>&lt;-</code> symbol used in R to assign a <a href="#value">value</a> to an <a href="#object">object</a>,
+e.g. <code>weight_kg &lt;- 55</code>. Can be read as “55 goes into
+<code>weight_kg</code>”. The <code>=</code> sign can also perform
+assignment but is conventionally reserved for setting function
+arguments.
+</dd>
+<dt><span id="class">class</span></dt>
+<dd>
+The type of an R <a href="#object">object</a>
+(e.g. <code>numeric</code>, <code>character</code>,
+<code>data.frame</code>, <code>factor</code>), which determines how
+functions handle it. Found using the <code>class()</code> function.
+</dd>
+<dt><span id="coercion">coercion</span></dt>
+<dd>
+The automatic conversion of values from one <a href="#class">class</a>
+to another when they are combined, for example when mixed data types are
+placed in a single <a href="#vector">vector</a>. Coercion follows a
+hierarchy: logical → integer → numeric → character.
+</dd>
+<dt><span id="comment">comment</span></dt>
+<dd>
+A remark in a script intended to help human readers understand the code,
+but ignored when the code runs. Comments in R start with a
+<code>#</code> character and run to the end of the line.
+</dd>
+<dt><span id="console">console</span></dt>
+<dd>
+The pane in RStudio where R commands can be typed and are executed
+immediately, and where results are displayed. Indicated by a
+<code>&gt;</code> prompt when ready for input, or a <code>+</code>
+prompt when an incomplete command is still being entered.
+</dd>
+<dt><span id="coordinates">coordinates</span></dt>
+<dd>
+In the context of a data frame, the row and column position (e.g.
+<code>surveys[1, 6]</code>) used with square-bracket indexing to extract
+specific data. Row numbers are specified first, followed by column
+numbers.
+</dd>
+<dt><span id="data-frame">data frame</span></dt>
+<dd>
+A tabular <a href="#data-structure">data structure</a> in which columns
+are <a href="#vector">vectors</a> of equal length, and each column holds
+a single type of data. The standard structure for tabular data in R,
+most commonly created by <code>read.csv()</code> or
+<code>read.table()</code>.
+</dd>
+<dt><span id="data-structure">data structure</span></dt>
+<dd>
+A way of organising and storing data in R. Common data structures
+include vectors, lists, matrices, data frames, factors, and arrays.
+</dd>
+<dt><span id="factor">factor</span></dt>
+<dd>
+A <a href="#data-structure">data structure</a> used to represent
+categorical data. Factors are stored internally as integers associated
+with text <a href="#level">levels</a>, and can be ordered or unordered.
+</dd>
+<dt><span id="filtering">filtering</span></dt>
+<dd>
+Subsetting rows of a data frame based on a logical condition, most
+commonly with the <strong><code>dplyr</code></strong> function
+<code>filter()</code>, e.g. <code>filter(surveys, year == 1995)</code>.
+</dd>
+<dt><span id="function">function</span></dt>
+<dd>
+A named, reusable set of instructions that performs a task, usually
+taking one or more <a href="#argument">arguments</a> as input and
+returning a <a href="#value">value</a> as output. Running a function is
+called <em>calling</em> it, e.g. <code>sqrt(10)</code>.
+</dd>
+<dt><span id="geom">geom</span></dt>
+<dd>
+Short for “geometric object”; a <strong><code>ggplot2</code></strong>
+layer function that determines how data is visually represented in a
+plot, such as <code>geom_point()</code> for scatter plots,
+<code>geom_boxplot()</code> for boxplots, or <code>geom_line()</code>
+for line plots.
+</dd>
+<dt><span id="aesthetic-mapping">aesthetic mapping</span></dt>
+<dd>
+In <strong><code>ggplot2</code></strong>, the association between
+variables in a dataset and visual properties of a plot (position,
+colour, size, shape), set using the <code>aes()</code> function,
+e.g. <code>aes(x = weight, y = hindfoot_length)</code>.
+</dd>
+<dt><span id="faceting">faceting</span></dt>
+<dd>
+A <strong><code>ggplot2</code></strong> technique that splits a single
+plot into multiple small panels based on the values of one or more
+variables, using <code>facet_wrap()</code> or <code>facet_grid()</code>.
+</dd>
+<dt><span id="level">level</span></dt>
+<dd>
+One of a pre-defined set of possible values that a <a href="#factor">factor</a> can take. By default, R sorts levels
+alphabetically. Found using the <code>levels()</code> function.
+</dd>
+<dt><span id="library">library</span></dt>
+<dd>
+A collection of R <a href="#function">functions</a>, data, and
+documentation bundled together as a <a href="#package">package</a>; also
+the name of the function (<code>library()</code>) used to load an
+installed package into an R session.
+</dd>
+<dt><span id="missing-value">missing value</span></dt>
+<dd>
+A value that is absent from a dataset, represented in R by
+<code>NA</code>. Many functions return <code>NA</code> if any input
+contains missing values unless told to ignore them, typically with the
+argument <code>na.rm = TRUE</code>.
+</dd>
+<dt><span id="object">object</span></dt>
+<dd>
+A named “container” in R that stores a <a href="#value">value</a>, such
+as a number, character string, vector, or data frame. Also referred to
+as a <em>variable</em>. Created using the <a href="#assignment-operator">assignment operator</a>.
+</dd>
+<dt><span id="option">option</span></dt>
+<dd>
+An <a href="#argument">argument</a> to a function that has a default
+value, typically used to alter how the function behaves
+(e.g. <code>digits</code> in <code>round()</code>). Can be left out to
+use the default, or specified to override it.
+</dd>
+<dt><span id="package">package</span></dt>
+<dd>
+A collection of R functions, data, and documentation that extends R’s
+built-in capabilities. Must be installed once with
+<code>install.packages()</code> and loaded in each session with
+<code>library()</code>.
+</dd>
+<dt><span id="pipe">pipe</span></dt>
+<dd>
+An operator that passes the result of one expression as the first
+argument to the next, allowing multiple operations to be chained
+together in a readable sequence. Written as <code>|&gt;</code> in base R
+(or <code>%&gt;%</code> from the
+<strong><code>magrittr</code></strong>/<strong><code>tidyverse</code></strong>
+packages).
+</dd>
+<dt><span id="pivoting">pivoting</span></dt>
+<dd>
+Reshaping a data frame between “wide” and “long” formats using
+<strong><code>tidyr</code></strong> functions:
+<code>pivot_longer()</code> converts columns into rows (wide to long),
+and <code>pivot_wider()</code> converts rows into columns (long to
+wide).
+</dd>
+<dt><span id="reproducibility">reproducibility</span></dt>
+<dd>
+The ability for someone else, including your future self, to obtain the
+same results from the same dataset using the same documented analysis
+steps, typically achieved by working from saved scripts rather than
+manual, undocumented actions.
+</dd>
+<dt><span id="script">script</span></dt>
+<dd>
+A plain text file containing a saved sequence of R commands, which can
+be run and re-run to reproduce an analysis. Written and edited in the
+RStudio Source pane.
+</dd>
+<dt><span id="split-apply-combine">split-apply-combine</span></dt>
+<dd>
+A data analysis strategy in which data is split into groups (using
+<code>group_by()</code>), a function is applied to each group (e.g. with
+<code>summarize()</code>), and the results are combined into a single
+output.
+</dd>
+<dt><span id="subsetting">subsetting</span></dt>
+<dd>
+Extracting specific elements from a <a href="#vector">vector</a> or <a href="#data-frame">data frame</a>, using numeric indices, logical
+conditions, or column/row names inside square brackets, or with
+<strong><code>dplyr</code></strong> functions like <code>select()</code>
+and <code>filter()</code>.
+</dd>
+<dt><span id="tibble">tibble</span></dt>
+<dd>
+The <strong><code>tidyverse</code></strong> version of a <a href="#data-frame">data frame</a> (class <code>tbl_df</code>), with
+slightly different default printing and behaviour, typically created by
+<code>read_csv()</code> rather than <code>read.csv()</code>.
+</dd>
+<dt><span id="value">value</span></dt>
+<dd>
+A piece of information stored and retrieved by an <a href="#object">object</a>, such as a number, a character string, or a
+collection of these, such as a <a href="#vector">vector</a>.
+</dd>
+<dt><span id="vector">vector</span></dt>
+<dd>
+The most basic <a href="#data-structure">data structure</a> in R: an
+ordered collection of values of the same <a href="#class">class</a>,
+created with the <code>c()</code> function.
+</dd>
+<dt><span id="working-directory">working directory</span></dt>
+<dd>
+The folder R uses as the default location to look for and save files.
+Best managed using an RStudio Project, and checked with
+<code>getwd()</code>. Scripts should not hard-code changes to it with
+<code>setwd()</code>, since this will not work on someone else’s
+computer.
+</dd>
+</dl><!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
- -->
-</section></div> <!-- / div.lesson-content -->
+ --></section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
       </div>
@@ -337,7 +568,7 @@ any links that you are not going to use.
   "url": "https://Southampton-RSG-Training.github.io/data-analysis-and-visualisation-r/instructor/reference.html",
   "identifier": "https://Southampton-RSG-Training.github.io/data-analysis-and-visualisation-r/instructor/reference.html",
   "dateCreated": "2026-07-28",
-  "dateModified": "2023-03-16",
+  "dateModified": "2026-07-28",
   "datePublished": "2026-07-28"
 }
 

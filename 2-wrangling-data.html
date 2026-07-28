@@ -198,12 +198,30 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         2. Day 2: Manipulating Data
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#data-manipulation-using-dplyr-and-tidyr">Data Manipulation using <strong><code>dplyr</code></strong> and
+<strong><code>tidyr</code></strong></a></li>
+<li><a href="#getting-started-with-tidyverse">Getting started with Tidyverse</a></li>
+<li><a href="#managing-data-with-dplyr">Managing Data with dplyr</a></li>
+<li><a href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>
+<li><a href="#pipes">Pipes</a></li>
+<li><a href="#mutate">Mutate</a></li>
+<li><a href="#split-apply-combine-data-analysis">Split-Apply-Combine Data Analysis</a></li>
+<li><a href="#counting">Counting</a></li>
+<li><a href="#formatting-dates">Formatting Dates</a></li>
+<li><a href="#reshaping-with-pivot_wider-and-pivot_longer">Reshaping with pivot_wider and pivot_longer</a></li>
+<li><a href="#exporting-data">Exporting data</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
 
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -336,11 +354,10 @@ purpose those formats are useful.</li>
 </div>
 </div>
 </div>
-<div class="section level1">
-<h1 id="data-manipulation-using-dplyr-and-tidyr">Data Manipulation using <strong><code>dplyr</code></strong> and
+<section><h2 class="section-heading" id="data-manipulation-using-dplyr-and-tidyr">Data Manipulation using <strong><code>dplyr</code></strong> and
 <strong><code>tidyr</code></strong>
-<a class="anchor" aria-label="anchor" href="#data-manipulation-using-dplyr-and-tidyr"></a></h1>
-<p>Packages in R are basically sets of additional functions that let you
+<a class="anchor" aria-label="anchor" href="#data-manipulation-using-dplyr-and-tidyr"></a></h2>
+<hr class="half-width"><p>Packages in R are basically sets of additional functions that let you
 do more stuff. The functions we’ve been using so far, like
 <code>str()</code> or <code>data.frame()</code>, come built into R;
 packages give you access to more of them. Before you use a package for
@@ -376,9 +393,8 @@ the script.</p>
 <code class="sourceCode R"><span><span class="co">## load the tidyverse packages, incl. dplyr</span></span>
 <span><span class="kw">library</span><span class="op">(</span><span class="va">tidyverse</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="section level2">
-<h2 id="getting-started-with-tidyverse">Getting started with Tidyverse<a class="anchor" aria-label="anchor" href="#getting-started-with-tidyverse"></a></h2>
-<p>We’ll read in our data using the <code>read_csv()</code> function,
+</section><section><h2 class="section-heading" id="getting-started-with-tidyverse">Getting started with Tidyverse<a class="anchor" aria-label="anchor" href="#getting-started-with-tidyverse"></a></h2>
+<hr class="half-width"><p>We’ll read in our data using the <code>read_csv()</code> function,
 from the tidyverse package <strong><code>readr</code></strong>, instead
 of <code>read.csv()</code>.</p>
 <div class="codewrapper sourceCode" id="cb2">
@@ -480,10 +496,8 @@ function.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="managing-data-with-dplyr">Managing Data with dplyr<a class="anchor" aria-label="anchor" href="#managing-data-with-dplyr"></a></h2>
-<p>We’re going to learn some of the most common
+</section><section><h2 class="section-heading" id="managing-data-with-dplyr">Managing Data with dplyr<a class="anchor" aria-label="anchor" href="#managing-data-with-dplyr"></a></h2>
+<hr class="half-width"><p>We’re going to learn some of the most common
 <strong><code>dplyr</code></strong> functions:</p>
 <ul><li>
 <code>select()</code>: subset columns</li>
@@ -499,10 +513,8 @@ statistics on grouped data</li>
 <code>arrange()</code>: sort results</li>
 <li>
 <code>count()</code>: count discrete values</li>
-</ul></div>
-<div class="section level2">
-<h2 id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
-<p>To select columns of a data frame, use <code>select()</code>. The
+</ul></section><section><h2 class="section-heading" id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
+<hr class="half-width"><p>To select columns of a data frame, use <code>select()</code>. The
 first argument to this function is the data frame
 (<code>surveys</code>), and the subsequent arguments are the columns to
 keep.</p>
@@ -530,10 +542,8 @@ front of the variable to exclude it.</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">filter</span><span class="op">(</span><span class="va">surveys</span>, <span class="va">year</span> <span class="op">==</span> <span class="fl">1995</span><span class="op">)</span></span></code></pre>
 </div>
-</div>
-<div class="section level2">
-<h2 id="pipes">Pipes<a class="anchor" aria-label="anchor" href="#pipes"></a></h2>
-<p>What if you want to select and filter at the same time? There are
+</section><section><h2 class="section-heading" id="pipes">Pipes<a class="anchor" aria-label="anchor" href="#pipes"></a></h2>
+<hr class="half-width"><p>What if you want to select and filter at the same time? There are
 three ways to do this: use intermediate steps, nested functions, or
 pipes.</p>
 <p>With intermediate steps, you create a temporary data frame and use
@@ -685,10 +695,8 @@ possible and using pipes to remove the intermediary variables.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="mutate">Mutate<a class="anchor" aria-label="anchor" href="#mutate"></a></h2>
-<p>Frequently you’ll want to create new columns based on the values in
+</section><section><h2 class="section-heading" id="mutate">Mutate<a class="anchor" aria-label="anchor" href="#mutate"></a></h2>
+<hr class="half-width"><p>Frequently you’ll want to create new columns based on the values in
 existing columns, for example to do unit conversions, or to find the
 ratio of values in two columns. For this we’ll use
 <code>mutate()</code>.</p>
@@ -818,10 +826,8 @@ selects and mutates? Have a look at the <a href="https://dplyr.tidyverse.org/" c
 </div>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="split-apply-combine-data-analysis">Split-Apply-Combine Data Analysis<a class="anchor" aria-label="anchor" href="#split-apply-combine-data-analysis"></a></h2>
-<p>Many data analysis tasks can be approached using the
+</section><section><h2 class="section-heading" id="split-apply-combine-data-analysis">Split-Apply-Combine Data Analysis<a class="anchor" aria-label="anchor" href="#split-apply-combine-data-analysis"></a></h2>
+<hr class="half-width"><p>Many data analysis tasks can be approached using the
 <em>split-apply-combine</em> paradigm: split the data into groups, apply
 some analysis to each group, and then combine the results.
 <strong><code>dplyr</code></strong> makes this very easy through the use
@@ -934,10 +940,8 @@ weight:</p>
 <span>  <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">mean_weight</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="counting">Counting<a class="anchor" aria-label="anchor" href="#counting"></a></h2>
-<p>When working with data, we often want to know the number of
+</section><section><h2 class="section-heading" id="counting">Counting<a class="anchor" aria-label="anchor" href="#counting"></a></h2>
+<hr class="half-width"><p>When working with data, we often want to know the number of
 observations found for each factor or combination of factors. For this
 task, <strong><code>dplyr</code></strong> provides <code>count()</code>.
 For example, if we wanted to count the number of rows of data for each
@@ -1064,10 +1068,8 @@ and <code>weight</code>.</p></li>
 </div>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="formatting-dates">Formatting Dates<a class="anchor" aria-label="anchor" href="#formatting-dates"></a></h2>
-<p>One of the most common issues that new (and experienced!) R users
+</section><section><h2 class="section-heading" id="formatting-dates">Formatting Dates<a class="anchor" aria-label="anchor" href="#formatting-dates"></a></h2>
+<hr class="half-width"><p>One of the most common issues that new (and experienced!) R users
 have is converting date and time information into a variable that is
 appropriate and usable during analyses. As a reminder from earlier in
 this lesson, the best practice for dealing with date data is to ensure
@@ -1258,10 +1260,8 @@ to unpick where errors have occured.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section level2">
-<h2 id="reshaping-with-pivot_wider-and-pivot_longer">Reshaping with pivot_wider and pivot_longer<a class="anchor" aria-label="anchor" href="#reshaping-with-pivot_wider-and-pivot_longer"></a></h2>
-<p>In <code>surveys</code>, the rows of <code>surveys</code> contain the
+</section><section><h2 class="section-heading" id="reshaping-with-pivot_wider-and-pivot_longer">Reshaping with pivot_wider and pivot_longer<a class="anchor" aria-label="anchor" href="#reshaping-with-pivot_wider-and-pivot_longer"></a></h2>
+<hr class="half-width"><p>In <code>surveys</code>, the rows of <code>surveys</code> contain the
 values of variables associated with each record (the unit), values such
 as the weight or sex of each animal associated with each record. What if
 instead of comparing records, we wanted to compare the different mean
@@ -1447,11 +1447,8 @@ and value columns for <code>pivot_wider()</code>.</p></li>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section level1">
-<h1 id="exporting-data">Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a></h1>
-<p>Now that you have learned how to use
+</section><section><h2 class="section-heading" id="exporting-data">Exporting data<a class="anchor" aria-label="anchor" href="#exporting-data"></a></h2>
+<hr class="half-width"><p>Now that you have learned how to use
 <strong><code>dplyr</code></strong> to extract information from or
 summarize your raw data, you may want to export these new data sets to
 share them with your collaborators or for archival.</p>
@@ -1566,11 +1563,7 @@ tidyr package.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter Bottom"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="1-starting-with-data.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="3-visualising-data.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
