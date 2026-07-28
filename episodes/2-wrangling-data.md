@@ -627,8 +627,8 @@ str(surveys)
 ```
 
 We are going to use the `ymd()` function from the package
-**`lubridate`** (which belongs to the **`tidyverse`**; learn more
-[here](https://www.tidyverse.org/)). When you load the **`tidyverse`**
+**`lubridate`** (which belongs to the **`tidyverse`**; learn more on the
+[tidyverse website](https://www.tidyverse.org/)). When you load the **`tidyverse`**
 (`library("tidyverse")`), the core packages get loaded. **`lubridate`**
 however does not belong to the core tidyverse, so you have to load it
 explicitly with `library(lubridate)`

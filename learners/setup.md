@@ -2,36 +2,24 @@
 title: Setup
 ---
 
-FIXME: Setup instructions live in this document. Please specify the tools and
-the data sets the Learner needs to have installed.
-
-## Data Sets
-
-<!--
-FIXME: place any data you want learners to use in `episodes/data` and then use
-       a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
-       link to it, replacing the example.com link.
--->
-Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
 
 ## Software Setup
 
-::::::::::::::::::::::::::::::::::::::: discussion
+For this workshop, you will need to **install R and RStudio**.
 
-### Details
+R is a programming language and software environment for statistical computing and graphics. The RStudio Integrated Development Environment (IDE) is a set of tools designed to help you be more productive with R.
 
-Setup for different systems can be presented in dropdown menus via a `spoiler`
-tag. They will join to this discussion block, so you can give a general overview
-of the software used in this lesson here and fill out the individual operating
-systems (and potentially add more, e.g. online setup) in the solutions blocks.
+**If you are using a University of Southampton laptop, you should install R and RStudio from the Software Centre**.  If not, please follow the instructions for your operating system below.
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
+### R
+
+R can be found at [https://cran.rstudio.com/](https://cran.rstudio.com/), from here pick your OS and download the latest release, see below for direct links to your OS.
 
 :::::::::::::::: spoiler
 
 ### Windows
 
-Use PuTTY
+[https://cran.rstudio.com/bin/windows/base/](https://cran.rstudio.com/bin/windows/base/)
 
 ::::::::::::::::::::::::
 
@@ -39,7 +27,12 @@ Use PuTTY
 
 ### MacOS
 
-Use Terminal.app
+If prompted, choose to allow downloads from cran.rstudio.com.
+
+[https://cran.rstudio.com/bin/macosx/](https://cran.rstudio.com/bin/macosx/)
+
+- For intel based macs choose R-4...pkg
+- For ARM based macs (M1 etc.) choose R-4..-arm64.pkg
 
 ::::::::::::::::::::::::
 
@@ -48,7 +41,40 @@ Use Terminal.app
 
 ### Linux
 
-Use Terminal
+R is included on many linux distros check to see if it is already present. Else use your package manager (snap, apt, yum), or look at the [R for linux download page](https://cran.rstudio.com/bin/linux/)
 
 ::::::::::::::::::::::::
 
+### RStudio
+
+On the RStudio website, under [Direct Downloads (Open Source)](https://docs.posit.co/ide/user/#rstudio-ide-oss-downloads), select the RStudio download for your operating system.
+
+:::::::::::::::: spoiler
+
+### Windows
+
+Download and run the .exe file and follow instructions given by your computer.
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
+
+### MacOS
+
+Download the .dmg file.
+
+- If prompted, choose to allow downloads from rstudio.com.
+- Open the downloaded dmg archive from the Downloads folder.
+- Drag the RStudio icon to the Applications folder to install.
+
+
+::::::::::::::::::::::::
+
+
+:::::::::::::::: spoiler
+
+### Linux
+
+Download the appropriate install file (.rpm or .deb) for your distro.
+
+::::::::::::::::::::::::
