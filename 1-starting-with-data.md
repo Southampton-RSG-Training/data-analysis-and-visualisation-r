@@ -463,7 +463,7 @@ long.
 - R is case sensitive (e.g., `weight_kg` is different from `Weight_kg`).
 - There are some names that cannot be used because they are the names of
 fundamental functions in R (e.g., `if`, `else`, `for`, see
-[here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)
+[a list of reserved words in R](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)
 for a complete list). In general, even if it's allowed, it's best to not
 use other function names (e.g., `c`, `T`, `mean`, `data`, `df`,
 `weights`). If in doubt, check the help to see if the name is already in
