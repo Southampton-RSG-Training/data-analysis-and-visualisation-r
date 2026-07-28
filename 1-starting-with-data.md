@@ -38,7 +38,7 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Working Environment
+## Working Environment
 
 To start with we will focus on the first three learning objectives and
 get your working environment set up.
@@ -373,7 +373,7 @@ function or package you're using in your query.
 
 ---
 
-# R Basics
+## R Basics
 
 Now that we have a working environment set up we can start on the basics
 of R.
@@ -1121,7 +1121,7 @@ data structures, we are ready to start working with the Portal dataset
 we have been using in the other lessons, and learn about data frames.
 ---
 
-# Load Data
+## Load Data
 
 We have now learnt enough of the basics of R to be able to use R in
 place of spreadsheets. As the previous lessons will have shown you
