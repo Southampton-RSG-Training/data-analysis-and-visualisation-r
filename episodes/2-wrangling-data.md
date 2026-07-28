@@ -30,7 +30,7 @@ exercises: 30
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Data Manipulation using **`dplyr`** and **`tidyr`**
+## Data Manipulation using **`dplyr`** and **`tidyr`**
 
 Packages in R are basically sets of additional functions that let you do
 more stuff. The functions we've been using so far, like `str()` or
@@ -940,7 +940,7 @@ surveys_long |>
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-# Exporting data
+## Exporting data
 
 Now that you have learned how to use **`dplyr`** to extract information
 from or summarize your raw data, you may want to export these new data
