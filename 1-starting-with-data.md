@@ -691,12 +691,12 @@ weight_g
 A vector can also contain characters:
 
 ```r
-animals <- c("mouse", "rat", "dog")
+ animals  <- c("mouse", "rat", "dog", "cat")
 animals
 ```
 
 ```output
-[1] "mouse" "rat"   "dog"
+[1] "mouse" "rat"   "dog"   "cat"
 ```
 
 The quotes around "mouse", "rat", etc. are essential here to tell R that
@@ -719,7 +719,7 @@ length(animals)
 ```
 
 ```output
-[1] 3
+[1] 4
 ```
 
 An important feature of a vector, is that all of the elements are the
@@ -759,7 +759,7 @@ str(animals)
 ```
 
 ```output
-chr [1:3] "mouse" "rat" "dog"
+chr [1:4] "mouse" "rat" "dog" "cat"
 ```
 
 You can use the `c()` function to add other elements to your vector:
@@ -1250,11 +1250,24 @@ vector.
 We can see this when inspecting the **str**ucture of a data frame
 with the function `str()`:
 
-```r
-str(surveys)
-```
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Inspecting `data.frame` Objects
+## Inspecting Dataframes
+
+Based on the output of `str(surveys)`, can you answer the following
+questions?
+
+- What is the class of the object `surveys`?
+- How many rows and how many columns are in this object?
+
+:::::::::::::::::::::::: solution
+
+- class: data frame
+- how many rows: 34786, how many columns: 13
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 We already saw how the functions `head()` and `str()` can be useful to
 check the content and the structure of a data frame. Here is a
@@ -1275,28 +1288,6 @@ of the data. Let's try them out!
   - `str(surveys)` - structure of the object and information about the class, length and content of each column
   - `summary(surveys)` - summary statistics for each column
 
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Inspecting Dataframes
-
-Based on the output of `str(surveys)`, can you answer the following
-questions?
-
-- What is the class of the object `surveys`?
-- How many rows and how many columns are in this object?
-
-```r
-str(surveys)
-```
-
-:::::::::::::::::::::::: solution
-
-- class: data frame
-- how many rows: 34786, how many columns: 13
-
-:::::::::::::::::::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Indexing and subsetting data frames
 

@@ -340,6 +340,25 @@ Hint: Check the class for `plot_id`. Consider changing the class of
 `plot_id` from integer to factor. Why does this change how R makes the
 graph?
 
+:::::::::::::::::::::::: solution
+
+1. & 2. 
+
+```r
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
+  geom_jitter(alpha = 0.3, color = "tomato")+
+  geom_violin(alpha = 0) +
+  scale_y_log10()
+```
+3. 
+
+```r
+ggplot(data = surveys_complete, mapping = aes(x = species_id, y = hindfoot_length, color = factor(plot_id))) +
+  geom_jitter(alpha = 0.3)+
+  geom_boxplot()
+```
+:::::::::::::::::::::::::::::::::
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -652,11 +671,43 @@ to either improve one of the plots generated in this exercise or
 create a beautiful graph of your own. Use the RStudio [**`ggplot2`**
 cheat sheet](https://ggplot2.tidyverse.org/) for inspiration.
 
+When you have a plot you're happy with, assign it to a variable called `my_plot`.
+
+Feel free to play around with any plot you like! If you'd like a suggestion, try this one:
+
+```r
+ggplot(data = yearly_counts, aes(x = year, y = n, color = genus)) +
+  geom_line()
+```
+
 Here are some ideas:
 
-- Try using a different color palette using [RColorBrewer](https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/).
-- See if you can change the thickness of the lines.
-- Can you find a way to change the name of the legend? What about its labels?
+1. Try using a different color palette using [RColorBrewer](https://www.datanovia.com/en/blog/the-a-z-of-rcolorbrewer-palette/).
+
+Load RColorBrewer and view the colour palettes available.  Specify the argument `colorblindFriendly = TRUE` to only include palettes that are accessible to people with colour blindness. 
+
+```r
+install.packages('RColorBrewer')
+library(RColorBrewer)
+display.brewer.all(colorblindFriendly = TRUE)
+```
+
+2. See if you can change the appearance of the lines or points on your plot (hint: investigate the `linetype` and `linewidth` arguments).
+
+3. Can you find a way to change the name of the legend? What about its labels? Hint: investigate the scale_color_discrete() ggplot layer (or scale_color_brewer() layer if using RColorBrewer).
+
+
+:::::::::::::::::::::::: solution
+
+
+```r
+ggplot(data = yearly_counts, aes(x = year, y = n, color = genus)) +
+  geom_line(linewidth = 2) +
+  scale_color_brewer(palette = "Dark2", 
+                     name = "Genus",
+                     labels=c("Cha", "Dip", "Neo", "Ony", "Perog", "Perom", "Rei", "sig"))
+```
+:::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -703,34 +754,24 @@ dimension and resolution of your plot by adjusting the appropriate
 arguments (`width`, `height` and `dpi`):
 
 ```r
-my_plot <- ggplot(data = yearly_sex_counts,
-                  aes(x = year, y = n, color = sex)) +
-    geom_line() +
-    facet_wrap(vars(genus)) +
-    labs(title = "Observed genera through time",
-        x = "Year of observation",
-        y = "Number of individuals") +
-    theme_bw() +
-    theme(axis.text.x = element_text(colour = "grey20", size = 12, angle = 90,
-                                     hjust = 0.5, vjust = 0.5),
-          axis.text.y = element_text(colour = "grey20", size = 12),
-          text = element_text(size = 16))
 
-ggsave("fig/name_of_file.png", my_plot, width = 15, height = 10)
-
-## This also works for grid.arrange() plots
 combo_plot <- grid.arrange(spp_weight_boxplot, spp_count_plot, ncol = 2,
                            widths = c(4, 6))
+                           
+ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, height = 6, dpi = 300)
 ```
 
 ![](fig/ggsave-example-1.png){alt='Combined plot saved with ggsave showing the weight boxplot and abundance line plot side by side.'}
 
-```r
-ggsave("fig/combo_plot_abun_weight.png", combo_plot, width = 10, height = 6, dpi = 300)
-```
-
 Note: The parameters `width` and `height` also determine the font size
 in the saved plot.
+
+Now, try saving the plot that you created in the previous challenge:
+
+```r
+ggsave("fig/my_plot.png", my_plot, width = 8, height = 6)
+
+```
 
 ::::::::::::::::::::::::::::::::::::: keypoints
 
