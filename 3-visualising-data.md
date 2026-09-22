@@ -691,6 +691,7 @@ install.packages('RColorBrewer')
 library(RColorBrewer)
 display.brewer.all(colorblindFriendly = TRUE)
 ```
+Use the ggplot layer `scale_color_brewer(palette = [palette name])` to add the colour palette to your plot, subsituting 'palette name' for your preferred RColorBrewer palette.
 
 2. See if you can change the appearance of the lines or points on your plot (hint: investigate the `linetype` and `linewidth` arguments).
 
